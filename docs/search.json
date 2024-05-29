@@ -1,0 +1,9 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Sacré Pythagore",
+    "section": "",
+    "text": "Les applications ShinyLive doivent être dans un unique bloc\nLa longueur de l’hypothénuse est calculée à l’aide du théorème de Pythagore\n\\[\nc = \\sqrt{a^2 + b^2}\n\\]\n#| standalone: true\nfrom shiny import render, ui\nfrom shiny.express import input\n\nimport math\n\nui.input_numeric(\"a\", \"a\", 1, min=1, max=10)\nui.input_numeric(\"b\", \"b\", 1, min=1, max=10)\n\n@render.text\ndef txt():\n    c = math.sqrt(input.a()**2 + input.b()**2)\n    return f\"c = {c}\""
+  }
+]
